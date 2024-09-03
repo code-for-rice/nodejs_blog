@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
@@ -12,14 +13,21 @@ const port = 3000;
 app.use(morgan('combined'));
 
 //Template engine
-app.engine('handlebars', handlebars.engine());
-app.set('view engine', 'handlebars');
+app.engine('hbs', handlebars.engine({
+    extname: '.hbs'
+}));
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'resourses\\views'));
+
 
 //route
-app.get('/', (req, res) => {
-    res.send('123')
-}
-)
+app.get('/', (req, res) => { 
+    res.render('home')
+})
+
+app.get('/news', (req, res) => { 
+    res.render('news')
+})
 
 //127.0.0.1 - localhost
 
