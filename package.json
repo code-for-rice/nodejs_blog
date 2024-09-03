@@ -20,11 +20,12 @@
     "url": "https://github.com/TuyenToMi/nodejs_blog/issues"
   },
   "homepage": "https://github.com/TuyenToMi/nodejs_blog#readme",
-  "description": "",
   "dependencies": {
     "express": "^4.19.2"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.4"
-  }
+  },
+  "description": ""
 }
